@@ -18,4 +18,9 @@ steps:
     echo "Build completed successfully"
   displayName: 'Build Step'
 
-  
+- task: AzureWebApp@1
+  displayName: 'Deploy to Azure Web App'
+  inputs:
+    azureSubscription: 'azure-service-connection'
+    appName: 'azure-cicd-demo-dilanjan'
+    package: '.'
